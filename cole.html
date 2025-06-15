@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      
+    }
+
+    nav ul li {
+      position: relative;
+      display: inline-block;
+     
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 20px 20px;
+      background-color: #c246f3;
+      color: white;
+      text-decoration: none;
+     
+    }
+
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f657fc;
+     
+    }
+
+    nav ul li:hover ul {
+      display: block;
+      
+    }
+
+    nav ul li ul li a {
+      padding: 10px;
+      width: 150px;
+      
+    }
+.menu-container {
+      display: flex;
+      justify-content: center;
+    }
+ 
+    .menu li {
+      background-color: #eee;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+    .submenu {
+  border-top: 1px solid #ccc;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+  </style>
+</head>
+<body>
+    <style>
+    body {
+              margin: 0;
+              font-family: 'Comic Sans MS', cursive, sans-serif;
+              background: #fff6ff;
+              color: #222;
+            }
+        
+            header {
+              background: linear-gradient(90deg, #ff4dc4, #ffba08);
+              color: white;
+              padding: 20px;
+              text-align: center;
+            }
+        
+            .header-content {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 15px;
+              flex-wrap: wrap;
+            }
+        
+            header img {
+              height: 80px;
+              cursor: pointer;
+            }
+        
+            header h1 {
+              margin: 0;
+              font-size: 3rem;
+              text-shadow: 2px 2px 4px #000;
+            }
+        
+            .banner {
+              width: 100%;
+              height: 300px;
+              background-image: url('https://cdn.pixabay.com/photo/2017/08/06/04/40/bear-2581892_1280.jpg');
+              background-size: cover;
+              background-position: center;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              padding: 20px;
+            }
+        
+            .banner h2 {
+              color: white;
+              font-size: 2.8rem;
+              font-weight: bold;
+              margin: 0;
+              text-shadow: 3px 3px 5px #000;
+              background: rgba(0,0,0,0.3);
+              padding: 10px 30px;
+              border-radius: 15px;
+            }
+        
+            section {
+              padding: 40px 20px;
+            }
+        
+            .section-title {
+              text-align: center;
+              font-size: 2.5rem;
+              color: #ff4dc4;
+              margin-bottom: 30px;
+            }
+        
+            .items {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 25px;
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+        
+            .card {
+              background: white;
+              padding: 20px;
+              border-radius: 20px;
+              text-align: center;
+              transition: transform 0.3s, box-shadow 0.3s;
+              cursor: pointer;
+              box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            }
+        
+            .card:hover {
+              transform: scale(1.05);
+              box-shadow: 0 0 25px 5px rgba(255, 0, 255, 0.4);
+            }
+        
+            .card img {
+              max-width: 100%;
+              height: 180px;
+              object-fit: contain;
+              margin-bottom: 15px;
+              transition: filter 0.3s, transform 0.3s;
+            }
+        
+            .card:hover img {
+              filter: brightness(1.2) drop-shadow(0 0 10px #ffd700);
+              transform: rotate(-1deg) scale(1.03);
+            }
+        
+            .items .card:nth-child(1) {
+              border: 3px solid #ff4dc4;
+            }
+        
+            .items .card:nth-child(2) {
+              border: 3px dashed #ffba08;
+            }
+        
+            .items .card:nth-child(3) {
+              border: 3px dotted #007bff;
+            }
+        
+            footer {
+              background-color: #007bff;
+              color: white;
+              text-align: center;
+              padding: 20px;
+              font-size: 1rem;
+            }
+        
+            .imagen-horizontal img {
+          width: 100%;
+          height: auto;
+          display: block;
+          margin-top: 20px;
+          border-radius: 10px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+   .productos-destacados {
+          text-align: center;
+          margin: 60px 20px 40px;
+          animation: slideIn 1.5s ease-in-out;
+        }
+        
+        .productos-destacados h2 {
+          font-size: 3rem;
+          color: #ff4dc4;
+          text-shadow: 3px 3px 5px #ffba08;
+          animation: pulse 1.5s infinite alternate;
+        }
+        
+        .productos-destacados p {
+          font-size: 1.3rem;
+          color: #444;
+          margin-top: 15px;
+        }
+        
+        .contacto {
+          margin-top: 25px;
+          font-size: 1.1rem;
+          color: #007bff;
+        }
+        
+        /* Animaciones */
+        @keyframes pulse {
+          from {
+            transform: scale(1);
+            color: #ff4dc4;
+          }
+          to {
+            transform: scale(1.07);
+            color: #ff0080;
+          }
+        }
+        
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(60px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+           
+        
+        .publicidad-tienda {
+          background: linear-gradient(135deg, #ffe0fa, #fff0d9);
+          padding: 60px 20px;
+          text-align: center;
+          border-top: 4px dashed #ff4dc4;
+          border-bottom: 4px dashed #ffba08;
+          animation: fadeIn 1.5s ease-in;
+        }
+        
+        .publicidad-tienda h2 {
+          font-size: 2.8rem;
+          color: #ff0080;
+          text-shadow: 2px 2px 4px #ffba08;
+          animation: colorFlash 2s infinite;
+        }
+        
+        .publicidad-tienda p {
+          font-size: 1.4rem;
+          color: #444;
+          margin: 15px 0;
+        }
+        
+        .publicidad-tienda .coleccionistas {
+          font-weight: bold;
+          font-size: 1.5rem;
+          color: #d100d1;
+          animation: pulseColor 2s infinite;
+        }
+        
+        .destellos {
+          font-size: 2rem;
+          margin-top: 25px;
+          animation: floatIcons 5s linear infinite;
+        }
+        
+        
+        @keyframes colorFlash {
+          0% { color: #ff0080; }
+          50% { color: #ffba08; }
+          100% { color: #ff0080; }
+        }
+        
+        @keyframes pulseColor {
+          0% { transform: scale(1); color: #d100d1; }
+          50% { transform: scale(1.1); color: #ff4dc4; }
+          100% { transform: scale(1); color: #d100d1; }
+        }
+        
+         @keyframes floatIcons {
+          0% { transform: translateX(0); }
+          50% { transform: translateX(15px); }
+          100% { transform: translateX(0); }
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(60px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+  </style>
+   <header>
+    <div class="header-content"></div>
+      <a href="index.html">
+        <img src="imagenesjug/pcl.jpeg" alt="Logo Juguetería" />
+      </a>
+      <h1>Juguetería Magic World</h1>
+    </div>
+    <p>¡Diversión, colores y alegría para todos!</p>
+  </header>
+<nav class="menu">
+  <ul>
+    <body style="background-color: lightblue;">
+     <div class="menu-container">
+      <li><a href="index.html">Inicio</a></li>
+    <li>
+      <a href="productos.html">Productos</a>
+      <ul class="submenu">
+        <a href="mesa.html">Juegos de mesa</a>
+        <li><a href="juegos.html">Video juegos</a></li>
+       <li><a href="cole.html">Coleccionistas</a></li>
+      </ul>
+    </li>
+    <li><a href="contacto.html">Contacto</a></li>
+     <li><a href="formulario.html">Formulario</a></li>
+     </div>
+  </ul>
+</nav>
+</body>
+    <section id="coleccion">
+     <h2 class="section-title" >Coleccionistas</h2>
+  <div class="items">
+      <div class="card">
+        <img src="imagenesjug/maa.jpg" alt="Hulkbuster">
+        <h3>Funko Pop! Hulkbuster with Iron Man</h3>
+        <p>Edición limitada con detalles de lujo para fans de Marvel.</p>
+      </div>
+      <div class="card">
+        <img src="imagenesjug/wi.jpg" alt="Stormtrooper">
+        <h3>Funko Pop! Star Wars: Stormtrooper</h3>
+        <p>Figura exclusiva. ¡Que la fuerza te acompañe!</p>
+      </div>
+      <div class="card">
+        <img src="imagenesjug/stichquierecomida.jpg" alt="Stitch">
+        <h3>Funko Pop! Disney: Stitch in Sand</h3>
+        <p>Stitch disfrutando la playa, adorable y coleccionable.</p>
+      </div>
+    </section>
+   <footer>
+    <p>&copy; ACOSTA MORENO AMERICA LIZETH 406, 2025 Juguetería Magic World.</p>
+  </footer>
+</body>
+</html>

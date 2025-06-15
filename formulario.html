@@ -1,0 +1,455 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Formulario</title>
+  <title>Juguetería Magic World</title>
+  <link rel="icon" type="image/png" href="imagenesjug/icono.png" />
+  
+            <style>
+            body {
+              margin: 0;
+              font-family: 'Comic Sans MS', cursive, sans-serif;
+              background: #fff6ff;
+              color: #222;
+            }
+        
+            header {
+              background: linear-gradient(90deg, #ff4dc4, #ffba08);
+              color: white;
+              padding: 20px;
+              text-align: center;
+            }
+        
+            .header-content {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 15px;
+              flex-wrap: wrap;
+            }
+        
+            header img {
+              height: 80px;
+              cursor: pointer;
+            }
+        
+            header h1 {
+              margin: 0;
+              font-size: 3rem;
+              text-shadow: 2px 2px 4px #000;
+            }
+        
+            .banner {
+              width: 100%;
+              height: 300px;
+              background-image: url('https://cdn.pixabay.com/photo/2017/08/06/04/40/bear-2581892_1280.jpg');
+              background-size: cover;
+              background-position: center;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              padding: 20px;
+            }
+        
+            .banner h2 {
+              color: white;
+              font-size: 2.8rem;
+              font-weight: bold;
+              margin: 0;
+              text-shadow: 3px 3px 5px #000;
+              background: rgba(0,0,0,0.3);
+              padding: 10px 30px;
+              border-radius: 15px;
+            }
+        
+            section {
+              padding: 40px 20px;
+            }
+        
+            .section-title {
+              text-align: center;
+              font-size: 2.5rem;
+              color: #ff4dc4;
+              margin-bottom: 30px;
+            }
+        
+            .items {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 25px;
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+        
+            .card {
+              background: white;
+              padding: 20px;
+              border-radius: 20px;
+              text-align: center;
+              transition: transform 0.3s, box-shadow 0.3s;
+              cursor: pointer;
+              box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            }
+        
+            .card:hover {
+              transform: scale(1.05);
+              box-shadow: 0 0 25px 5px rgba(255, 0, 255, 0.4);
+            }
+        
+            .card img {
+              max-width: 100%;
+              height: 180px;
+              object-fit: contain;
+              margin-bottom: 15px;
+              transition: filter 0.3s, transform 0.3s;
+            }
+        
+            .card:hover img {
+              filter: brightness(1.2) drop-shadow(0 0 10px #ffd700);
+              transform: rotate(-1deg) scale(1.03);
+            }
+        
+            .items .card:nth-child(1) {
+              border: 3px solid #ff4dc4;
+            }
+        
+            .items .card:nth-child(2) {
+              border: 3px dashed #ffba08;
+            }
+        
+            .items .card:nth-child(3) {
+              border: 3px dotted #007bff;
+            }
+        
+            footer {
+              background-color: #007bff;
+              color: white;
+              text-align: center;
+              padding: 20px;
+              font-size: 1rem;
+            }
+        
+            .imagen-horizontal img {
+          width: 100%;
+          height: auto;
+          display: block;
+          margin-top: 20px;
+          border-radius: 10px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .productos-destacados {
+          text-align: center;
+          margin: 60px 20px 40px;
+          animation: slideIn 1.5s ease-in-out;
+        }
+        
+        .productos-destacados h2 {
+          font-size: 3rem;
+          color: #ff4dc4;
+          text-shadow: 3px 3px 5px #ffba08;
+          animation: pulse 1.5s infinite alternate;
+        }
+        
+        .productos-destacados p {
+          font-size: 1.3rem;
+          color: #444;
+          margin-top: 15px;
+        }
+        
+        .contacto {
+          margin-top: 25px;
+          font-size: 1.1rem;
+          color: #007bff;
+        }
+        
+        /* Animaciones */
+        @keyframes pulse {
+          from {
+            transform: scale(1);
+            color: #ff4dc4;
+          }
+          to {
+            transform: scale(1.07);
+            color: #ff0080;
+          }
+        }
+        
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(60px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+           
+        
+        .publicidad-tienda {
+          background: linear-gradient(135deg, #ffe0fa, #fff0d9);
+          padding: 60px 20px;
+          text-align: center;
+          border-top: 4px dashed #ff4dc4;
+          border-bottom: 4px dashed #ffba08;
+          animation: fadeIn 1.5s ease-in;
+        }
+        
+        .publicidad-tienda h2 {
+          font-size: 2.8rem;
+          color: #ff0080;
+          text-shadow: 2px 2px 4px #ffba08;
+          animation: colorFlash 2s infinite;
+        }
+        
+        .publicidad-tienda p {
+          font-size: 1.4rem;
+          color: #444;
+          margin: 15px 0;
+        }
+        
+        .publicidad-tienda .coleccionistas {
+          font-weight: bold;
+          font-size: 1.5rem;
+          color: #d100d1;
+          animation: pulseColor 2s infinite;
+        }
+        
+        .destellos {
+          font-size: 2rem;
+          margin-top: 25px;
+          animation: floatIcons 5s linear infinite;
+        }
+        
+        
+        @keyframes colorFlash {
+          0% { color: #ff0080; }
+          50% { color: #ffba08; }
+          100% { color: #ff0080; }
+        }
+        
+        @keyframes pulseColor {
+          0% { transform: scale(1); color: #d100d1; }
+          50% { transform: scale(1.1); color: #ff4dc4; }
+          100% { transform: scale(1); color: #d100d1; }
+        }
+        
+        @keyframes floatIcons {
+          0% { transform: translateX(0); }
+          50% { transform: translateX(15px); }
+          100% { transform: translateX(0); }
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(60px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        body {
+          margin: 0;
+          font-family: 'Comic Sans MS', cursive, sans-serif;
+          background: #b3e5fc; /* Azul claro */
+          color: #222;
+          overflow-x: hidden;
+        }
+        
+        .cascada-juguetes {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 1;
+          overflow: hidden;
+        }
+        
+        .cascada-juguetes span {
+          position: absolute;
+          font-size: 2.5rem;
+          animation: caer 10s linear infinite;
+          opacity: 0.8;
+        }
+        
+        .cascada-juguetes span:nth-child(1) {
+          left: 5%;
+          animation-delay: 0s;
+        }
+        .cascada-juguetes span:nth-child(2) {
+          left: 20%;
+          animation-delay: 2s;
+        }
+        .cascada-juguetes span:nth-child(3) {
+          left: 35%;
+          animation-delay: 4s;
+        }
+        .cascada-juguetes span:nth-child(4) {
+          left: 50%;
+          animation-delay: 1s;
+        }
+        .cascada-juguetes span:nth-child(5) {
+          left: 65%;
+          animation-delay: 3s;
+        }
+        .cascada-juguetes span:nth-child(6) {
+          left: 80%;
+          animation-delay: 5s;
+        }
+        .cascada-juguetes span:nth-child(7) {
+          left: 95%;
+          animation-delay: 2.5s;
+        }
+        
+        @keyframes caer {
+          0% {
+            top: -10%;
+            transform: rotate(0deg);
+          }
+          100% {
+            top: 110%;
+            transform: rotate(360deg);
+          }
+        }
+  </style>
+</head>
+<body>
+<div class="cascada-juguetes">
+  <span>🧸</span><span>🚗</span><span>🎮</span><span>🐻</span><span>🪀</span><span>🎲</span><span>🚀</span>
+</div>
+  <header>
+    <div class="header-content"></div>
+      <a href="index.html">
+        <img src="imagenesjug/pcl.jpeg" alt="Logo Juguetería" />
+      </a>
+      <h1>Juguetería Magic World</h1>
+    </div>
+    <p>¡Diversión, colores y alegría para todos!</p>
+  </header>
+</head>
+ <style>
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      
+    }
+
+    nav ul li {
+      position: relative;
+      display: inline-block;
+     
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 20px 20px;
+      background-color: #c246f3;
+      color: white;
+      text-decoration: none;
+     
+    }
+
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f657fc;
+     
+    }
+
+    nav ul li:hover ul {
+      display: block;
+      
+    }
+
+    nav ul li ul li a {
+      padding: 10px;
+      width: 150px;
+      
+    }
+.menu-container {
+      display: flex;
+      justify-content: center;
+    }
+ 
+    .menu li {
+      background-color: #eee;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+    .submenu {
+  border-top: 1px solid #ccc;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+  </style>
+</head>
+<body>
+<nav class="menu">
+  <ul>
+     <div class="menu-container">
+      <li><a href="index.html">Inicio</a></li>
+    <li>
+      <a href="productos.html">Productos</a>
+      <ul class="submenu">
+        <li><a href="mesa.html">Juegos de mesa</a></li>
+        <li><a href="juegos.html">Video juegos</a></li>
+       <li><a href="cole.html">Coleccionistas</a></li>
+      </ul>
+    </li>
+    <li><a href="contacto.html">Contacto</a></li>
+     <li><a href="formulario.html">Formulario</a></li>
+     </div>
+  </ul>
+</nav>
+
+</body>
+</html>
+<body style="background-color: #fff0f0; font-family: Georgia, serif; padding: 50px;">
+
+  <section style="max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+    <h2 style="text-align: center; color: #8B0000;">Formulario</h2>
+    <form id="cotizacionForm">
+      <label for="nombre"><strong>Nombre y Apellidos:</strong></label><br>
+      <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 10px; margin-bottom: 15px;"><br>
+
+      <label for="correo"><strong>Correo Electrónico:</strong></label><br>
+      <input type="email" id="correo" name="correo" required style="width: 100%; padding: 10px; margin-bottom: 15px;"><br>
+
+      <label for="telefono"><strong>Número Telefónico:</strong></label><br>
+      <input type="tel" id="telefono" name="telefono" required style="width: 100%; padding: 10px; margin-bottom: 15px;"><br>
+
+      <label for="mensaje"><strong>Mensaje personalizado:</strong></label><br>
+      <textarea id="mensaje" name="mensaje" rows="4" required style="width: 100%; padding: 10px; margin-bottom: 15px;"></textarea><br>
+
+      <button type="submit" style="padding: 12px 25px; background-color: #B22222; color: #FFD700; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">
+        Enviar
+      </button>
+    </form>
+  </section>
+
+
+  <script>
+    document.getElementById("cotizacionForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const correo = document.getElementById("correo").value;
+      const telefono = document.getElementById("telefono").value;
+      const mensaje = document.getElementById("mensaje").value;
+
+      let info = `✅ Gracias por tu solicitud:\n\n📌 Nombre: ${nombre}\n📧 Correo: ${correo}\n📞 Teléfono: ${telefono}\n📝 Mensaje: ${mensaje}`;
+     
+
+      alert(info);
+    });
+  </script>
+   <footer>
+    <p>&copy; ACOSTA MORENO AMERICA LIZETH 406, 2025 Juguetería Magic World. </p>
+  </footer>
+</body>
+</html>
